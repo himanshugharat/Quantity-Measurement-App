@@ -1,0 +1,41 @@
+$sky-blue: #446DFF;
+$white: #FFFFFF;
+$welcome-font: Montserrat;
+$heading-font: Poppins;
+
+.welcome{
+    font-size: 170%;
+    background-color: $sky-blue;
+    margin-left: -1%;
+    margin-right: -0.6%;
+}
+
+.welcome-heading{
+    padding: 1.4%;
+    color: $white;
+    font-weight: normal;
+    font-family: $welcome-font;
+}
+
+.header{
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.25%;
+    padding-top: 0.4%;
+}
+
+.header-quanment{
+    font-size: 140%;
+    margin-left: 15.5%;
+    font-weight: 600;
+    font-family: $heading-font;
+}
+
+.header-history{
+    font-size: 80%;
+    margin-right: 12.5%;
+    padding-top: 0.6%;
+    font-weight: normal;
+    font-family: $heading-font;
+}
