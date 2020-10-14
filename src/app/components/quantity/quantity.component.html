@@ -1,0 +1,34 @@
+<div>
+    <mat-button-toggle-group>
+        <mat-button-toggle><img src="../../../assets/images/beaker.png"></mat-button-toggle>
+        <mat-button-toggle><img src="../../../assets/images/ruler.png" alt=""></mat-button-toggle>
+        <mat-button-toggle><img src="../../../assets/images/thermometer.png" alt=""></mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+<div fxLayout="row">
+    <mat-form-field class="form-field" appearance="outline" gutter="">
+        <mat-label>Enter value</mat-label>
+        <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Output value</mat-label>
+        <input matInput type="text">
+    </mat-form-field>
+</div>
+<div>
+    <mat-form-field class="select-field" appearance="outline">
+        <mat-label>Quantity-Type</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let quantity of quantity" [value]="quantity.value">
+                {{quantity.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="select-field" appearance="outline">
+        <mat-label>Quantity-Type</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let quantity of quantity" [value]="quantity.value">
+                {{quantity.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
