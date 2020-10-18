@@ -1,9 +1,10 @@
 <div>
-    <mat-button-toggle-group>
-        <mat-button-toggle><img src="../../../assets/images/beaker.png"></mat-button-toggle>
-        <mat-button-toggle><img src="../../../assets/images/ruler.png" alt=""></mat-button-toggle>
-        <mat-button-toggle><img src="../../../assets/images/thermometer.png" alt=""></mat-button-toggle>
+    <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle #volume value="volume" (click)=logMg(volume.value)><img src="../../../assets/images/beaker.png"></mat-button-toggle>
+        <mat-button-toggle #length value="length" (click)=logMg(length.value)><img src="../../../assets/images/ruler.png" alt=""></mat-button-toggle>
+        <mat-button-toggle #temperature value="temperature" (click)=logMg(temperature.value)><img src="../../../assets/images/thermometer.png" alt=""></mat-button-toggle>
     </mat-button-toggle-group>
+    <div class="example-selected-value">Selected value: {{group.value}}</div>
 </div>
 <div fxLayout="row">
     <mat-form-field class="form-field" appearance="outline" gutter="">

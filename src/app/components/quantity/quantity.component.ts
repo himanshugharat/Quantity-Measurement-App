@@ -18,9 +18,34 @@ export class QuantityComponent implements OnInit {
     {value: 'temperature-2', viewValue: 'temperature'}
   ];
   
+
   constructor() {} 
 
   ngOnInit(): void {
+  
   }
+ logMg(val){
+   if(val == "length"){
+    quantity: this.quantity = [
+      {value: 'length-0', viewValue: 'Feet'},
+      {value: 'length-1', viewValue: 'Inch'},
+      {value: 'length-2', viewValue: 'Yard'},
+      {value: 'length-3', viewValue: 'Centimeter'},
+    ];
+   }
+   if(val == "volume"){
+    quantity: this.quantity = [
+      {value: 'length-0', viewValue: 'Litre'},
+      {value: 'length-1', viewValue: 'Gallon'},
+    ];
+   }
+   if(val == "temperature"){
+    quantity: this.quantity = [
+      {value: 'length-0', viewValue: 'Celsius'},
+      {value: 'length-1', viewValue: 'Fahrenheit'},
+    ];
+   }
+   
+ }
 
 }
