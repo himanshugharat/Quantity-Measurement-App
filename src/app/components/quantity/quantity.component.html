@@ -19,7 +19,7 @@
 <div>
     <mat-form-field class="select-field" appearance="outline">
         <mat-label>Quantity-Type</mat-label>
-        <mat-select>
+        <mat-select [(value)]="selectedFood">
             <mat-option *ngFor="let quantity of quantity" [value]="quantity.value">
                 {{quantity.viewValue}}
             </mat-option>
@@ -27,7 +27,7 @@
     </mat-form-field>
     <mat-form-field class="select-field" appearance="outline">
         <mat-label>Quantity-Type</mat-label>
-        <mat-select>
+        <mat-select [(value)]="selectedFood">
             <mat-option *ngFor="let quantity of quantity" [value]="quantity.value">
                 {{quantity.viewValue}}
             </mat-option>

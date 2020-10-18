@@ -17,7 +17,7 @@ export class QuantityComponent implements OnInit {
     {value: 'volume-1', viewValue: 'volume'},
     {value: 'temperature-2', viewValue: 'temperature'}
   ];
-  
+  selectedFood = this.quantity[0].value;
 
   constructor() {} 
 
