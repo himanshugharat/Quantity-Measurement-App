@@ -13,9 +13,10 @@ interface quantity {
 export class QuantityComponent implements OnInit {
   form: FormGroup;
   quantity: quantity[] = [
-    {value: 'length-0', viewValue: 'Length'},
-    {value: 'volume-1', viewValue: 'volume'},
-    {value: 'temperature-2', viewValue: 'temperature'}
+    {value: 'length-0', viewValue: 'Feet'},
+      {value: 'length-1', viewValue: 'Inch'},
+      {value: 'length-2', viewValue: 'Yard'},
+      {value: 'length-3', viewValue: 'Centimeter'},
   ];
   selectedFood = this.quantity[0].value;
 
@@ -32,18 +33,21 @@ export class QuantityComponent implements OnInit {
       {value: 'length-2', viewValue: 'Yard'},
       {value: 'length-3', viewValue: 'Centimeter'},
     ];
+    this.selectedFood = this.quantity[0].value;
    }
    if(val == "volume"){
     quantity: this.quantity = [
-      {value: 'length-0', viewValue: 'Litre'},
-      {value: 'length-1', viewValue: 'Gallon'},
+      {value: 'volume-0', viewValue: 'Litre'},
+      {value: 'volume-1', viewValue: 'Gallon'},
     ];
+    this.selectedFood = this.quantity[0].value;
    }
    if(val == "temperature"){
     quantity: this.quantity = [
-      {value: 'length-0', viewValue: 'Celsius'},
-      {value: 'length-1', viewValue: 'Fahrenheit'},
+      {value: 'temperature-0', viewValue: 'Celsius'},
+      {value: 'temperature-1', viewValue: 'Fahrenheit'},
     ];
+    this.selectedFood = this.quantity[0].value;
    }
    
  }

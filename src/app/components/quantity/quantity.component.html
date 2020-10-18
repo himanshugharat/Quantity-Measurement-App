@@ -19,15 +19,16 @@
 <div>
     <mat-form-field class="select-field" appearance="outline">
         <mat-label>Quantity-Type</mat-label>
-        <mat-select [(value)]="selectedFood">
+        <mat-select [(value)]="selectedFood" #elect>
             <mat-option *ngFor="let quantity of quantity" [value]="quantity.value">
                 {{quantity.viewValue}}
             </mat-option>
         </mat-select>
     </mat-form-field>
+  <!--  <div>{{elect.value}}</div>-->
     <mat-form-field class="select-field" appearance="outline">
         <mat-label>Quantity-Type</mat-label>
-        <mat-select [(value)]="selectedFood">
+        <mat-select>
             <mat-option *ngFor="let quantity of quantity" [value]="quantity.value">
                 {{quantity.viewValue}}
             </mat-option>
