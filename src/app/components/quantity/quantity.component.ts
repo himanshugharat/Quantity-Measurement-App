@@ -16,7 +16,6 @@ export class QuantityComponent implements OnInit {
   value2: number
   content: string
   input1: number
-  input2: number
   form: FormGroup;
   quantity: quantity[] = [
     { value: 'length-0', viewValue: 'Feet', convert: 12 },
@@ -50,8 +49,8 @@ export class QuantityComponent implements OnInit {
     }
     if (val == "temperature") {
       this.quantity = [
-        { value: 'temperature-0', viewValue: 'Celsius', convert: 0 },
-        { value: 'temperature-1', viewValue: 'Fahrenheit', convert: 0 },
+        { value: 'temperature-0', viewValue: 'Celsius', convert: 1 },
+        { value: 'temperature-1', viewValue: 'Fahrenheit', convert: 1 },
       ];
       this.selectedQuantity = this.quantity[0].value;
     }
@@ -75,7 +74,6 @@ export class QuantityComponent implements OnInit {
     console.log(this.value2)
   }
   fromValue(event) {
-    this.input1=event.target.value
+    this.input1 = event.target.value
   }
-  
 }
