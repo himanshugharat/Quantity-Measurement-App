@@ -1,36 +1,43 @@
+
 <div>
     <mat-button-toggle-group #group="matButtonToggleGroup">
-        <mat-button-toggle #volume value="volume" (click)=logMg(volume.value)><img src="../../../assets/images/beaker.png"></mat-button-toggle>
-        <mat-button-toggle #length value="length" (click)=logMg(length.value)><img src="../../../assets/images/ruler.png" alt=""></mat-button-toggle>
-        <mat-button-toggle #temperature value="temperature" (click)=logMg(temperature.value)><img src="../../../assets/images/thermometer.png" alt=""></mat-button-toggle>
+        <mat-button-toggle #volume value="volume" (click)=logMg(volume.value)><img
+                src="../../../assets/images/beaker.png"></mat-button-toggle>
+        <mat-button-toggle #length value="length" (click)=logMg(length.value)><img
+                src="../../../assets/images/ruler.png" alt=""></mat-button-toggle>
+        <mat-button-toggle #temperature value="temperature" (click)=logMg(temperature.value)><img
+                src="../../../assets/images/thermometer.png" alt=""></mat-button-toggle>
     </mat-button-toggle-group>
-    <div class="example-selected-value">Selected value: {{group.value}}</div>
+   <!-- <div class="example-selected-value">Selected value: {{group.value}}</div>-->
 </div>
-<div fxLayout="row">
-    <mat-form-field class="form-field" appearance="outline" gutter="">
-        <mat-label>Enter value</mat-label>
-        <input matInput type="text"value="0">
+<div >
+    <mat-form-field class="form-field" appearance="outline" >
+        <mat-label>From</mat-label>
+        <input matInput type="text" value="0" (change)="fromValue($event)">
     </mat-form-field>
     <mat-form-field class="form-field" appearance="outline">
-        <mat-label>Output value</mat-label>
-        <input matInput type="text" value="0">
+        <mat-label>To</mat-label>
+        <input matInput type="text" value="{{input1*value1/value2}}">
     </mat-form-field>
 </div>
 <div>
+    <mat-form-field class="select-field" appearance="outline" >
+        <mat-label>Quantity-Type</mat-label>
+        <mat-select [(value)]="selectedQuantity" (selectionChange)=selectChangeFrom($event.value)>
+            <mat-option *ngFor="let quantity of quantity" [value]="quantity.value">
+                {{quantity.viewValue}}
+            </mat-option>
+        </mat-select >
+    </mat-form-field>
+    <!--  <div>{{clientValue.value}}</div>-->
     <mat-form-field class="select-field" appearance="outline">
         <mat-label>Quantity-Type</mat-label>
-        <mat-select [(value)]="selectedFood" #elect>
+        <mat-select (selectionChange)=selectChangeTo($event.value)>
             <mat-option *ngFor="let quantity of quantity" [value]="quantity.value">
                 {{quantity.viewValue}}
             </mat-option>
         </mat-select>
     </mat-form-field>
-  <!--  <div>{{elect.value}}</div>-->
-    <mat-form-field class="select-field" appearance="outline">
-        <mat-label>Quantity-Type</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let quantity of quantity" [value]="quantity.value">
-                {{quantity.viewValue}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+
+    </div>
+
