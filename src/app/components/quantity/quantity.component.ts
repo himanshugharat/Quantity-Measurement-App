@@ -36,7 +36,7 @@ export class QuantityComponent implements OnInit {
         { value: 'length-0', viewValue: 'Feet', convert: 12 },
         { value: 'length-1', viewValue: 'Inch', convert: 1 },
         { value: 'length-2', viewValue: 'Yard', convert: 36 },
-        { value: 'length-3', viewValue: 'Centimeter', convert: 0.4 },
+        { value: 'length-3', viewValue: 'Centimeter', convert: 2.54 },
       ];
       this.selectedQuantity = this.quantity[0].value;
     }
@@ -67,6 +67,7 @@ export class QuantityComponent implements OnInit {
   }
   selectChangeTo(event) {
     this.quantity.forEach(element => {
+
       if (element.value == event) {
         this.value2 = element.convert
       }
