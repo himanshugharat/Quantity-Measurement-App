@@ -1,18 +1,30 @@
-div {
+.align {
   padding-top: 10px;
+  margin-top: 16%;
+  padding-bottom: 10px;
+  justify-items: center;
 }
 img {
-  width: 35%;
-  padding: 30px;
+  padding: 13px 10px 10px 8px;
 }
+
 .form-field {
-  width: 310px;
-  padding-right: 20px;
+  width: 49%;
+  padding-right: 1%;
 }
 .select-field {
-  width: 310px;
-  padding-right: 20px;
+  width: 49%;
+  padding-right: 1%;
 }
+mat-button-toggle {
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: "Nunito Semibold", sans-serif;
+  font-size: 14px;
+  font-style: bold;
+}
+
 @import "~@angular/material/theming";
 
 @include mat-core();
@@ -25,10 +37,34 @@ $app-theme: mat-light-theme($app-primary, $app-accent);
 @mixin mix-app-theme($app-theme) {
   $primary: map-get($app-theme, primary);
   $accent: map-get($app-theme, accent);
+  .mat-button-toggle {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    display: inline-block;
+  }
+  .mat-button-toggle .img-top {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    z-index: 99;
+  }
+  .temperature1:hover {
+    background-color: rgba(255, 0, 13, 0.233);
+  }
+  .length1:hover {
+    background-color: rgba(0, 238, 255, 0.096);
+  }
+  .volume1:hover {
+    background-color: rgba(0, 0, 255, 0.096);
+  }
 
-  .mat-button-toggle-checked {
-    background-color: mat-color($accent);
-    color: mat-color($accent);
+  .mat-button-toggle:hover .img-top {
+    display: inline;
+  }
+  .mat-button-toggle-checked .img-top {
+    display: inline;
   }
 }
 @include mix-app-theme($app-theme);

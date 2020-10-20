@@ -69,7 +69,6 @@ export class QuantityComponent implements OnInit {
   }
   selectChangeTo(event) {
     this.quantity.forEach(element => {
-
       if (element.value == event) {
         this.valueTo = element.convert
       }
