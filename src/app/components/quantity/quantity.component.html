@@ -1,21 +1,21 @@
 <div>
     <mat-button-toggle-group #group="matButtonToggleGroup">
-        <mat-button-toggle #volume value="volume" (click)=logMg(volume.value)><img
+        <mat-button-toggle #volume value="volume" (click)=getToggelValue(volume.value)><img
                 src="../../../assets/images/beaker.png"></mat-button-toggle>
-        <mat-button-toggle #length value="length" (click)=logMg(length.value)><img
+        <mat-button-toggle #length value="length" (click)=getToggelValue(length.value)><img
                 src="../../../assets/images/ruler.png" alt=""></mat-button-toggle>
-        <mat-button-toggle #temperature value="temperature" (click)=logMg(temperature.value)><img
+        <mat-button-toggle #temperature value="temperature" (click)=getToggelValue(temperature.value)><img
                 src="../../../assets/images/thermometer.png" alt=""></mat-button-toggle>
     </mat-button-toggle-group>
 </div>
 <div>
     <mat-form-field class="form-field" appearance="outline">
         <mat-label>From</mat-label>
-        <input matInput type="text" placeholder="0"  (change)="fromValue($event)">
+        <input matInput type="text" placeholder="0" (change)="fromValue($event)">
     </mat-form-field>
     <mat-form-field class="form-field" appearance="outline">
         <mat-label>To</mat-label>
-        <input matInput type="text" placeholder="0" value="{{(input1*value1)/value2}}">
+        <input matInput type="text" placeholder="0" value="{{(inputFrom*valueFrom)/valueTo}}">
     </mat-form-field>
 </div>
 <div>
@@ -30,7 +30,8 @@
     <mat-form-field class="select-field" appearance="outline">
         <mat-label>Quantity-Type</mat-label>
         <mat-select (selectionChange)=selectChangeTo($event.value)>
-            <mat-option *ngFor="let quantity of quantity;let i =index" [value]="quantity.value" disabled="{{i==disablePlace}}" >
+            <mat-option *ngFor="let quantity of quantity;let i =index" [value]="quantity.value"
+                disabled="{{i==disablePlace}}">
                 {{quantity.viewValue}}
             </mat-option>
         </mat-select>
