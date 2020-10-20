@@ -5,7 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { QuantityComponent } from './components/quantity/quantity.component';
 
 const routes: Routes = [{ path: 'home',component:HomeComponent ,
-children:[{path:'header',component:HeaderComponent,children:[{path:'quantity',component:QuantityComponent}]}]}];
+children:[{path:'header',component:HeaderComponent}]}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

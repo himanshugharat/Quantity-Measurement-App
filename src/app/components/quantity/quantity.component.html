@@ -11,11 +11,11 @@
 <div>
     <mat-form-field class="form-field" appearance="outline">
         <mat-label>From</mat-label>
-        <input matInput type="text" value="0" (change)="fromValue($event)">
+        <input matInput type="text" placeholder="0"  (change)="fromValue($event)">
     </mat-form-field>
     <mat-form-field class="form-field" appearance="outline">
         <mat-label>To</mat-label>
-        <input matInput type="text" value="{{input1*value1/value2}}">
+        <input matInput type="text" placeholder="0" value="{{(input1*value1)/value2}}">
     </mat-form-field>
 </div>
 <div>
@@ -30,7 +30,7 @@
     <mat-form-field class="select-field" appearance="outline">
         <mat-label>Quantity-Type</mat-label>
         <mat-select (selectionChange)=selectChangeTo($event.value)>
-            <mat-option *ngFor="let quantity of quantity" [value]="quantity.value" >
+            <mat-option *ngFor="let quantity of quantity;let i =index" [value]="quantity.value" disabled="{{i==disablePlace}}" >
                 {{quantity.viewValue}}
             </mat-option>
         </mat-select>
