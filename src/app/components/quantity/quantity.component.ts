@@ -20,6 +20,7 @@ export class QuantityComponent implements OnInit {
   inputTo: number
   form: FormGroup;
   disablePlace: number;
+  tempActiveType: boolean;
   quantity: quantity[] = [
     { value: 'length-0', viewValue: 'Feet', convert: 12, place: 0 },
     { value: 'length-1', viewValue: 'Inch', convert: 1, place: 1 },
@@ -27,6 +28,7 @@ export class QuantityComponent implements OnInit {
     { value: 'length-3', viewValue: 'Centimeter', convert: 0.4, place: 3 },
   ];
   selectedQuantity = this.quantity[0].value;
+  active: boolean
 
   constructor() { }
 
@@ -60,13 +62,29 @@ export class QuantityComponent implements OnInit {
     }
   }
   selectChangeFrom(event) {
+    console.log(event)
     this.quantity.forEach(element => {
       if (element.value == event) {
+        if (event == 'temperature-0') {
+          this.active = true
+          this.tempActiveType = true;
+          
+        }
+        if(event == 'temperature-1') {
+          this.active = true
+          this.tempActiveType = false;
+        
+        }else{
+          this.active=false
+        }
+      
+       //this.active=false
         this.valueFrom = element.convert
         this.disablePlace = element.place
       }
     });
   }
+  
   selectChangeTo(event) {
     this.quantity.forEach(element => {
       if (element.value == event) {

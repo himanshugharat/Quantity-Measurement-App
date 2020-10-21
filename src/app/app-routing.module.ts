@@ -7,7 +7,7 @@ import { QuantityComponent } from './components/quantity/quantity.component';
 const routes: Routes = [{
   path: 'home', component: HomeComponent,
   children: [
-  { path: 'header', component: HeaderComponent} ,{ path: 'header/quantity', component: QuantityComponent }]
+    { path: '', component: HeaderComponent },{ path: 'header', component: HeaderComponent }, { path: 'quantity', component: QuantityComponent }]
 }];
 
 @NgModule({
