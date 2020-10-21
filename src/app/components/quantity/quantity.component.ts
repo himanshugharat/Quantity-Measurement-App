@@ -63,28 +63,30 @@ export class QuantityComponent implements OnInit {
   }
   selectChangeFrom(event) {
     console.log(event)
+    console.log(`${this.tempActiveType}before`)
     this.quantity.forEach(element => {
       if (element.value == event) {
         if (event == 'temperature-0') {
           this.active = true
           this.tempActiveType = true;
-          
+
         }
-        if(event == 'temperature-1') {
+        else if (event == 'temperature-1') {
           this.active = true
           this.tempActiveType = false;
-        
-        }else{
-          this.active=false
+
+        } else {
+          this.active = false
         }
-      
-       //this.active=false
+        console.log(`${this.tempActiveType}after`)
+        // this.tempActiveType = false;
+        //this.active=false
         this.valueFrom = element.convert
         this.disablePlace = element.place
       }
     });
   }
-  
+
   selectChangeTo(event) {
     this.quantity.forEach(element => {
       if (element.value == event) {
@@ -94,6 +96,23 @@ export class QuantityComponent implements OnInit {
   }
   fromValue(event) {
     this.inputFrom = event.target.value
+  }
+
+  ConvertedValue() {
+    if (this.active) {
+      if (this.tempActiveType===true) {
+        return (this.inputFrom-32)*5/9
+        //return (this.inputFrom*9/5)+32
+      } 
+      else if (this.tempActiveType===false) {
+        //return (this.inputFrom-32)*5/9
+        return (this.inputFrom*9/5)+32
+      }
+    }
+    else {
+      return (this.inputFrom*this.valueFrom)/this.valueTo
+    }
+
   }
 
 }

@@ -66,5 +66,8 @@ $app-theme: mat-light-theme($app-primary, $app-accent);
   .mat-button-toggle-checked .img-top {
     display: inline;
   }
+  .mat-button-toggle-checked{
+    background-color: rgba(0, 238, 255, 0.096);
+  }
 }
 @include mix-app-theme($app-theme);

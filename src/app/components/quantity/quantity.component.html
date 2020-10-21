@@ -1,5 +1,5 @@
 <div class="align">
-    <mat-button-toggle-group #group="matButtonToggleGroup">
+    <mat-button-toggle-group #group="matButtonToggleGroup"[value]=length>
         <mat-button-toggle class="volume1" #volume value="volume" (click)=getToggelValue(volume.value)><img
                 src="../../../assets/images/beaker.png"><img src="../../../assets/images/beaker-1.png" class="img-top"
                 alt="Card Front"></mat-button-toggle>
@@ -19,7 +19,7 @@
     <mat-form-field class="form-field" appearance="outline">
         <mat-label>To</mat-label>
         <input matInput type="text"
-            value="{{active?tempActiveType?(inputFrom*9/5)+32:(inputFrom-32)*5/9:(inputFrom*valueFrom)/valueTo}}">
+            value="{{ConvertedValue()?ConvertedValue():0}}">
     </mat-form-field>
 </div>
 <div>
