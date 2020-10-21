@@ -1,0 +1,56 @@
+{
+    "length": [
+        {
+            "value": "length-0",
+            "viewValue": "Feet",
+            "convert": 12,
+            "place": 0
+        },
+        {
+            "value": "length-1",
+            "viewValue": "Inch",
+            "convert": 1,
+            "place": 1
+        },
+        {
+            "value": "length-2",
+            "viewValue": "Yard",
+            "convert": 36,
+            "place": 2
+        },
+        {
+            "value": "length-3",
+            "viewValue": "Centimeter",
+            "convert": 0.4,
+            "place": 3
+        }
+    ],
+    "volume": [
+        {
+            "value": "volume-0",
+            "viewValue": "Litre",
+            "convert": 1,
+            "place": 0
+        },
+        {
+            "value": "volume-1",
+            "viewValue": "Gallon",
+            "convert": 3.78,
+            "place": 1
+        }
+    ],
+    "temperature": [
+        {
+            "value": "temperature-0",
+            "viewValue": "Celsius",
+            "convert": 1,
+            "place": 0
+        },
+        {
+            "value": "temperature-1",
+            "viewValue": "Fahrenheit",
+            "convert": 1,
+            "place": 1
+        }
+    ]
+}

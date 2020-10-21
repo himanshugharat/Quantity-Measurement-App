@@ -35,7 +35,7 @@
         <mat-label>Quantity-Type</mat-label>
         <mat-select (selectionChange)=selectChangeTo($event.value)>
             <mat-option *ngFor="let quantity of quantity;let i =index" [value]="quantity.value"
-                disabled="{{i==disablePlace}}">
+                disabled="{{i==isDisable}}">
                 {{quantity.viewValue}}
             </mat-option>
         </mat-select>
